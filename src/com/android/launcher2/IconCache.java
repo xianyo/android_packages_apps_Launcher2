@@ -25,7 +25,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
-
+import android.util.Slog;
 import java.util.HashMap;
 
 /**
@@ -62,6 +62,8 @@ public class IconCache {
             } else if (density == DisplayMetrics.DENSITY_XHIGH) {
                 // We'll need to use a denser icon, or some sort of a mipmap
                 mIconDpi = DisplayMetrics.DENSITY_XHIGH;
+            } else {
+                mIconDpi = density;
             }
         } else {
             mIconDpi = context.getResources().getDisplayMetrics().densityDpi;

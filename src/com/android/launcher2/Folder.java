@@ -242,6 +242,7 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
     public void startEditingFolderName() {
         mFolderName.setHint("");
         mIsEditingName = true;
+        destroyDrawingCache();
     }
 
     public void dismissEditingName() {
